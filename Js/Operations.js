@@ -18,16 +18,23 @@ function porcentaje(x){
     return x/100;
 }
 
-function borrar(a){
-    a= a.substring(0,a.length-1);
-    return a;
+function borrar(){
+    var ans = document.getElementById('ans').innerHTML;
+    document.getElementById('ans').innerHTML = ans.substring(0,ans.length-1);
 }
+
 function add(info) {
     document.getElementById('ans').innerHTML += info;
 }
+
 function getAns() {
     return  document.getElementById('ans').innerHTML;
 }
+
 function equals(info) {
     document.getElementById('ans').innerHTML = (info + "");
+}
+
+function clearAns() {
+    document.getElementById('ans').innerHTML = "";
 }
