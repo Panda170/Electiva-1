@@ -13,7 +13,9 @@
   <br/><br/>
   <label><b>Aún no hay historial</b></label>
 </div>
-<div class="display">Display</div>
+<div class="display">Display
+  <p id="ans"></p>
+</div>
 <div class="button">
   <table id="TablaBotones">
     <tr>
@@ -25,7 +27,7 @@
       <td><button class="BotonCalculadora">CE</button></td>
       <td><button class="BotonCalculadora">C</button></td>
       <td><button class="BotonCalculadora">&#9003;</button></td>
-      <td><button class="BotonCalculadoraOperador">÷</button></td>
+      <td><button class="BotonCalculadoraOperador" onclick="add('/')">÷</button></td>
     </tr>
     <tr>
       <td><button class="BotonCalculadoraItalic">X<sup>3</sup></button></td>
@@ -33,10 +35,10 @@
       <td><button class="BotonCalculadora">sin<sup>-1</sup></button></td>
       <td><button class="BotonCalculadora">cos<sup>-1</sup></button></td>
       <td><button class="BotonCalculadora">tan<sup>-1</sup></button></td>
-      <td><button class="BotonCalculadoraNegirta">7</button></td>
-      <td><button class="BotonCalculadoraNegirta">8</button></td>
-      <td><button class="BotonCalculadoraNegirta">9</button></td>
-      <td><button class="BotonCalculadoraOperador">x</button></td>
+      <td><button class="BotonCalculadoraNegirta" onclick="add('7')">7</button></td>
+      <td><button class="BotonCalculadoraNegirta" onclick="add('8')">8</button></td>
+      <td><button class="BotonCalculadoraNegirta" onclick="add('9')">9</button></td>
+      <td><button class="BotonCalculadoraOperador" onclick="add('*')">x</button></td>
     </tr>
     <tr>
       <td><button class="BotonCalculadora">√</button></td>
@@ -44,10 +46,10 @@
       <td><button class="BotonCalculadora">log</button></td>
       <td><button class="BotonCalculadora">Exp</button></td>
       <td><button class="BotonCalculadora">Mod</button></td>
-      <td><button class="BotonCalculadoraNegirta">4</button></td>
-      <td><button class="BotonCalculadoraNegirta">5</button></td>
-      <td><button class="BotonCalculadoraNegirta">6</button></td>
-      <td><button class="BotonCalculadoraOperador">-</button></td>
+      <td><button class="BotonCalculadoraNegirta" onclick="add('4')">4</button></td>
+      <td><button class="BotonCalculadoraNegirta" onclick="add('5')">5</button></td>
+      <td><button class="BotonCalculadoraNegirta" onclick="add('6')">6</button></td>
+      <td><button class="BotonCalculadoraOperador" onclick="add('-')">-</button></td>
     </tr>
     <tr>
       <td><button class="BotonCalculadoraItalic"><sup>1</sup>/<sub>x</sub></button></td>
@@ -55,10 +57,10 @@
       <td><button class="BotonCalculadora">ln</button></td>
       <td><button class="BotonCalculadora">dms</button></td>
       <td><button class="BotonCalculadora">deg</button></td>
-      <td><button class="BotonCalculadoraNegirta">1</button></td>
-      <td><button class="BotonCalculadoraNegirta">2</button></td>
-      <td><button class="BotonCalculadoraNegirta">3</button></td>
-      <td><button class="BotonCalculadoraOperador">+</button></td>
+      <td><button class="BotonCalculadoraNegirta" onclick="add('1')">1</button></td>
+      <td><button class="BotonCalculadoraNegirta" onclick="add('2')">2</button></td>
+      <td><button class="BotonCalculadoraNegirta" onclick="add('3')">3</button></td>
+      <td><button class="BotonCalculadoraOperador" onclick="add('+')">+</button></td>
     </tr>
     <tr>
       <td><button class="BotonCalculadora" style="color: darkgrey">↑</button></td>
@@ -69,9 +71,15 @@
       <td><button class="BotonCalculadoraOperador">±</button></td>
       <td><button class="BotonCalculadoraNegirta">0</button></td>
       <td><button class="BotonCalculadora" style="font-size: 25px; font-weight: bold"><b>,</b></button></td>
-      <td><button class="BotonCalculadoraOperador">=</button></td>
+      <td><button class="BotonCalculadoraOperador" onclick="equals(eval(getAns()))">=</button></td>
+
+      document.calc.ans.value=eval(document.calc.ans.value)"
     </tr>
   </table>
 </div>
+
+
+<script src= "https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="./Js/Operations.js" type="text/javascript"></script>
 </body>
 </html>
