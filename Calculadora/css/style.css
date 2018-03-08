@@ -12,8 +12,6 @@ button{
 	/*border: 3px solid red;*/
 }
 
-
-
 .history {
 	/*border: 3px solid black;*/
 	width: 20%;
@@ -42,6 +40,8 @@ button{
 	height: 100%;
 	background-color: #F9F9F9;
 	font-size: 17px;
+	border: hidden;
+	outline: none;
 }
 
 .BotonCalculadoraNegirta {
@@ -50,6 +50,8 @@ button{
 	font-weight: bold;
 	font-size: 25px;
 	background-color: white;
+	border: hidden;
+	outline: none;
 }
 
 .BotonCalculadoraOperador {
@@ -57,6 +59,8 @@ button{
 	height: 100%;
 	background-color: #F9F9F9;
 	font-size: 25px;
+	border: hidden;
+	outline: none;
 }
 .BotonCalculadoraItalic {
 	width: 100%;
@@ -64,14 +68,20 @@ button{
 	background-color: #F9F9F9;
 	font-size: 17px;
 	font-style: italic;
+	border: hidden;
+	outline: none;
 }
 
 .BotonHistorial {
+	border: hidden;
+	outline: none;
 	background-color: #E4E4E3;
 }
 
 .BotonHistorialSeleccionado {
 	background-color: #E4E4E3;
+	border: hidden;
+	outline: none;
 	border-bottom: 3px solid #CC6F29;
 }
 button#op:hover {
@@ -80,4 +90,40 @@ button#op:hover {
 
 button:hover {
 	background-color: #cccccc;
+}
+
+.ModeButton {
+	height: 100%;
+	background-color: #E4E4E3;
+	font-size: 22px;
+	border: hidden;
+	outline: none;
+}
+
+#accumulated {
+	text-align: right;
+	font-size: 30px;
+	height: 13%;
+}
+
+#ans {
+	text-align: right;
+	font-size: 100px;
+	height: 45%;
+}
+
+.ButtonModeAns {
+	border: hidden;
+	outline: none;
+	background-color: #E4E4E3;
+	width: 70px;
+	font-weight: bold;
+}
+
+.ButtonModeAnsDisable {
+	border: hidden;
+	outline: none;
+	background-color: #E4E4E3;
+	width: 70px;
+	color: darkgray;
 }
