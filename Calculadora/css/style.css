@@ -2,6 +2,27 @@ button{
 	outline: none;
 	box-shadow: none;
 }
+.titulo{
+	font-size: 13px;
+	padding: 5px;
+	height:23px;
+	background-color:#E4E4E3;
+	font-family: "Calibri";
+}
+.ModeButton {
+	height: 51px;
+	width: 45px;
+	background-color: #ACBF1D;
+	font-size: 22px;
+	border: hidden;
+	outline: none;
+}
+.CientificaLabel{
+	font-family: "Calibri";
+	font-size: 25px;
+	margin: 5px;
+	margin-bottom: 50px;
+}
 .button{
 	width: 80%;
 	height: 350px;
@@ -17,7 +38,7 @@ button{
 	width: 20%;
 	height: 600px;
 	float: right;
-	margin-top: 0px;
+	
 	background-color: #E4E4E3;
 }
 
@@ -76,13 +97,18 @@ button{
 	border: hidden;
 	outline: none;
 	background-color: #E4E4E3;
+	font-family: "Calibri";
+	font-size: 20px;
 }
 
 .BotonHistorialSeleccionado {
+	font-family: "Calibri";
 	background-color: #E4E4E3;
 	border: hidden;
 	outline: none;
 	border-bottom: 3px solid #CC6F29;
+	font-family: "Calibri";
+	font-size: 20px;
 }
 button#op:hover {
 	background-color: #a54fb1;
@@ -92,13 +118,6 @@ button:hover {
 	background-color: #cccccc;
 }
 
-.ModeButton {
-	height: 100%;
-	background-color: #E4E4E3;
-	font-size: 22px;
-	border: hidden;
-	outline: none;
-}
 
 #accumulated {
 	text-align: right;
@@ -108,8 +127,9 @@ button:hover {
 
 #ans {
 	text-align: right;
-	font-size: 100px;
-	height: 45%;
+	font-size: 50px;
+	height: 100px;
+	font-family: "Calibri";
 }
 
 .ButtonModeAns {

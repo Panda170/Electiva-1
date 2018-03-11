@@ -24,9 +24,17 @@ function borrar(){
 }
 
 function add(info) {
-	
+
+    //if(info=='+'|| info=='-' || info=='x' || info =='/' && ){
+      //  document.getElementById('ans').innerHTML +=;
+   // }
     document.getElementById('ans').innerHTML += info;
+    if(info=='+'|| info=='-' || info=='x' || info=='/'){
 	document.getElementById('accumulated').innerHTML = document.getElementById('ans').innerHTML;
+    document.getElementById('ans').innerHTML = "";
+    }
+
+
 }
 
 function getAns() {

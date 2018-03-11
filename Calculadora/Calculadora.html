@@ -7,17 +7,18 @@
 </head>
 
 <body>
+  <div class="titulo">&nbsp;&nbsp;Calculadora</div>
   <div class="history">
     <button class="BotonHistorialSeleccionado"><b>Historial</b></button>
     <button class="BotonHistorial"><b>Memoria</b></button>
     <br/>
     <br/>
-    <label><b>Aún no hay historial</b></label>
+    <label><b>No hay historial todavía.</b></label>
   </div>
   <div class="display">
     <div class="modeOperation">
-    	<button class = "ModeButton"> ≡ </button>
-    	<label style="font-size: 22px;">Científica</label>
+      <input type=image src="./resource/3palitos.png" class = "ModeButton"></input>
+    	<label class="CientificaLabel">&nbsp;Científica</label>
     </div>
     <div id="accumulated"> </div>
     <div id= "ans"></div>
@@ -55,7 +56,7 @@
         <td><button class="BotonCalculadoraNegirta" onclick="add('7')">7</button></td>
         <td><button class="BotonCalculadoraNegirta" onclick="add('8')">8</button></td>
         <td><button class="BotonCalculadoraNegirta" onclick="add('9')">9</button></td>
-        <td><button id="op" class="BotonCalculadoraOperador" onclick="add('*')">x</button></td>
+        <td><button id="op" class="BotonCalculadoraOperador" onclick="add('x')">x</button></td>
       </tr>
       <tr>
         <td><button class="BotonCalculadora">√</button></td>
