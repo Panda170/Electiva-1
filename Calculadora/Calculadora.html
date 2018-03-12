@@ -7,80 +7,92 @@
 </head>
 
 <body>
-<div class="history">
-  <button class="BotonHistorialSeleccionado"><b>Historial</b></button>
-  <button class="BotonHistorial"><b>Memoria</b></button>
-  <br/><br/>
-  <label><b>Aún no hay historial</b></label>
-  
-</div>
-<div class="display">Display
-  <p id="ans"></p>
-  
-</div>
-<div class="button">
-  <table id="TablaBotones">
-    <tr>
-      <td><button class="BotonCalculadoraItalic">X<sup>2</sup></button></td>
-      <td><button class="BotonCalculadoraItalic">X<sup>y</sup></button></td>
-      <td><button class="BotonCalculadora">sin</button></td>
-      <td><button class="BotonCalculadora">cos</button></td>
-      <td><button class="BotonCalculadora">tan</button></td>
-      <td><button class="BotonCalculadora" onclick="clearAns()">CE</button></td>
-      <td><button class="BotonCalculadora" onclick="clearAns()">C</button></td>
-      <td><button class="BotonCalculadora" onclick="borrar()">&#9003;</button></td>
-      <td><button id="op" class="BotonCalculadoraOperador" onclick="add('/')">÷</button></td>
-    </tr>
-    <tr>
-      <td><button class="BotonCalculadoraItalic">X<sup>3</sup></button></td>
-      <td><button class="BotonCalculadoraItalic"><sup>Y</sup>√<sub>X</sub></button></td>
-      <td><button class="BotonCalculadora">sin<sup>-1</sup></button></td>
-      <td><button class="BotonCalculadora">cos<sup>-1</sup></button></td>
-      <td><button class="BotonCalculadora">tan<sup>-1</sup></button></td>
-      <td><button class="BotonCalculadoraNegirta" onclick="add('7')">7</button></td>
-      <td><button class="BotonCalculadoraNegirta" onclick="add('8')">8</button></td>
-      <td><button class="BotonCalculadoraNegirta" onclick="add('9')">9</button></td>
-      <td><button id="op" class="BotonCalculadoraOperador" onclick="add('*')">x</button></td>
-    </tr>
-    <tr>
-      <td><button class="BotonCalculadora">√</button></td>
-      <td><button class="BotonCalculadora">10<sup>x</sup></button></td>
-      <td><button class="BotonCalculadora">log</button></td>
-      <td><button class="BotonCalculadora">Exp</button></td>
-      <td><button class="BotonCalculadora">Mod</button></td>
-      <td><button class="BotonCalculadoraNegirta" onclick="add('4')">4</button></td>
-      <td><button class="BotonCalculadoraNegirta" onclick="add('5')">5</button></td>
-      <td><button class="BotonCalculadoraNegirta" onclick="add('6')">6</button></td>
-      <td><button id="op" class="BotonCalculadoraOperador" onclick="add('-')">-</button></td>
-    </tr>
-    <tr>
-      <td><button class="BotonCalculadoraItalic"><sup>1</sup>/<sub>x</sub></button></td>
-      <td><button class="BotonCalculadora">e<sup>x</sup></button></td>
-      <td><button class="BotonCalculadora">ln</button></td>
-      <td><button class="BotonCalculadora">dms</button></td>
-      <td><button class="BotonCalculadora">deg</button></td>
-      <td><button class="BotonCalculadoraNegirta" onclick="add('1')">1</button></td>
-      <td><button class="BotonCalculadoraNegirta" onclick="add('2')">2</button></td>
-      <td><button class="BotonCalculadoraNegirta" onclick="add('3')">3</button></td>
-      <td><button id="op" class="BotonCalculadoraOperador" onclick="add('+')">+</button></td>
-    </tr>
-    <tr>
-      <td><button class="BotonCalculadora" style="color: darkgrey">↑</button></td>
-      <td><button class="BotonCalculadora">π</button></td>
-      <td><button class="BotonCalculadora">n!</button></td>
-      <td><button class="BotonCalculadora">(</button></td>
-      <td><button class="BotonCalculadora">)</button></td>
-      <td><button class="BotonCalculadoraOperador">±</button></td>
-      <td><button class="BotonCalculadoraNegirta">0</button></td>
-      <td><button class="BotonCalculadora" style="font-size: 25px; font-weight: bold"><b>,</b></button></td>
-      <td><button id="op" class="BotonCalculadoraOperador" onclick="equals(eval(getAns()))">=</button></td>
-
-    </tr>
-  </table>
-</div>
-
-
-<script src= "https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="./Js/Operations.js" type="text/javascript"></script>
+  <div class="history">
+    <button class="BotonHistorialSeleccionado"><b>Historial</b></button>
+    <button class="BotonHistorial"><b>Memoria</b></button>
+    <br/>
+    <br/>
+    <label><b>Aún no hay historial</b></label>
+  </div>
+  <div class="display">
+    <div class="modeOperation">
+    	<button class = "ModeButton"> ≡ </button>
+    	<label style="font-size: 22px;">Científica</label>
+    </div>
+    <div id="accumulated"> </div>
+    <div id= "ans"></div>
+    <div id="mode">
+    	<button class="ButtonModeAns">DEG</button>
+    	<button class="ButtonModeAns">HYP</button>
+    	<button class="ButtonModeAns">F-E</button></br></br>
+    	<button class="ButtonModeAnsDisable">MC</button>
+    	<button class="ButtonModeAnsDisable">MR</button>
+    	<button class="ButtonModeAns">M+</button>
+    	<button class="ButtonModeAns">M-</button>
+    	<button class="ButtonModeAns">MS</button>
+    </div>
+    
+  </div>
+  <div class="button">
+    <table id="TablaBotones">
+      <tr>
+        <td><button class="BotonCalculadoraItalic">X<sup>2</sup></button></td>
+        <td><button class="BotonCalculadoraItalic">X<sup>y</sup></button></td>
+        <td><button class="BotonCalculadora">sin</button></td>
+        <td><button class="BotonCalculadora">cos</button></td>
+        <td><button class="BotonCalculadora">tan</button></td>
+        <td><button class="BotonCalculadora" onclick="clearAns()">CE</button></td>
+        <td><button class="BotonCalculadora" onclick="clearAns()">C</button></td>
+        <td><button class="BotonCalculadora" onclick="borrar()">&#9003;</button></td>
+        <td><button id="op" class="BotonCalculadoraOperador" onclick="add('/')">÷</button></td>
+      </tr>
+      <tr>
+        <td><button class="BotonCalculadoraItalic">X<sup>3</sup></button></td>
+        <td><button class="BotonCalculadoraItalic"><sup>Y</sup>√<sub>X</sub></button></td>
+        <td><button class="BotonCalculadora">sin<sup>-1</sup></button></td>
+        <td><button class="BotonCalculadora">cos<sup>-1</sup></button></td>
+        <td><button class="BotonCalculadora">tan<sup>-1</sup></button></td>
+        <td><button class="BotonCalculadoraNegirta" onclick="add('7')">7</button></td>
+        <td><button class="BotonCalculadoraNegirta" onclick="add('8')">8</button></td>
+        <td><button class="BotonCalculadoraNegirta" onclick="add('9')">9</button></td>
+        <td><button id="op" class="BotonCalculadoraOperador" onclick="add('*')">x</button></td>
+      </tr>
+      <tr>
+        <td><button class="BotonCalculadora">√</button></td>
+        <td><button class="BotonCalculadora">10<sup>x</sup></button></td>
+        <td><button class="BotonCalculadora">log</button></td>
+        <td><button class="BotonCalculadora">Exp</button></td>
+        <td><button class="BotonCalculadora">Mod</button></td>
+        <td><button class="BotonCalculadoraNegirta" onclick="add('4')">4</button></td>
+        <td><button class="BotonCalculadoraNegirta" onclick="add('5')">5</button></td>
+        <td><button class="BotonCalculadoraNegirta" onclick="add('6')">6</button></td>
+        <td><button id="op" class="BotonCalculadoraOperador" onclick="add('-')">-</button></td>
+      </tr>
+      <tr>
+        <td><button class="BotonCalculadoraItalic"><sup>1</sup>/<sub>x</sub></button></td>
+        <td><button class="BotonCalculadora">e<sup>x</sup></button></td>
+        <td><button class="BotonCalculadora">ln</button></td>
+        <td><button class="BotonCalculadora">dms</button></td>
+        <td><button class="BotonCalculadora">deg</button></td>
+        <td><button class="BotonCalculadoraNegirta" onclick="add('1')">1</button></td>
+        <td><button class="BotonCalculadoraNegirta" onclick="add('2')">2</button></td>
+        <td><button class="BotonCalculadoraNegirta" onclick="add('3')">3</button></td>
+        <td><button id="op" class="BotonCalculadoraOperador" onclick="add('+')">+</button></td>
+      </tr>
+      <tr>
+        <td><button class="BotonCalculadora" style="color: darkgrey">↑</button></td>
+        <td><button class="BotonCalculadora">π</button></td>
+        <td><button class="BotonCalculadora">n!</button></td>
+        <td><button class="BotonCalculadora">(</button></td>
+        <td><button class="BotonCalculadora">)</button></td>
+        <td><button class="BotonCalculadoraOperador">±</button></td>
+        <td><button class="BotonCalculadoraNegirta">0</button></td>
+        <td><button class="BotonCalculadora" style="font-size: 25px; font-weight: bold"><b>,</b></button></td>
+        <td><button id="op" class="BotonCalculadoraOperador" onclick="equals(eval(getAns()))">=</button></td>
+      </tr>
+    </table>
+  </div>
+  <script src= "https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="./Js/Operations.js" type="text/javascript"></script>
 </body>
 </html>

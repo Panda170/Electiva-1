@@ -24,7 +24,9 @@ function borrar(){
 }
 
 function add(info) {
+	
     document.getElementById('ans').innerHTML += info;
+	document.getElementById('accumulated').innerHTML = document.getElementById('ans').innerHTML;
 }
 
 function getAns() {
@@ -32,9 +34,12 @@ function getAns() {
 }
 
 function equals(info) {
+	document.getElementById('accumulated').innerHTML ="";
     document.getElementById('ans').innerHTML = (info + "");
+	
 }
 
 function clearAns() {
     document.getElementById('ans').innerHTML = "";
+	document.getElementById('accumulated').innerHTML = "";
 }
