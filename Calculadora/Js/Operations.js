@@ -1,4 +1,3 @@
-// Hello.
 window.onload = function(){}; //Acciones tras cargar la página
 pantalla=document.getElementById("ans");
 pantallaAcumulada=document.getElementById("accumulated");
@@ -7,15 +6,18 @@ xi=1; //iniciar número en pantalla: 1=si; 0=no;
 coma=0; //estado coma decimal 0=no, 1=si;
 ni=0; //número oculto o en espera.
 operation="no"; //operación en curso; "no" =  sin operación.
+prev=x;
 
 //mostrar número en pantalla según se va escribiendo:
 function numero(entrada) { //recoge el número pulsado en el argumento.
          if (x=="0" || xi==1  ) {   // inicializar un número, 
             pantalla.innerHTML=entrada; //mostrar en pantalla
             x=entrada; //guardar número
+            prev=x;
             if (entrada==",") { //si escribimos una coma al principio del número
-               pantalla.innerHTML="0."; //escribimos 0.
+               pantalla.innerHTML="0,"; //escribimos 0.
                x=entrada; //guardar número
+               prev=x;
                coma=1; //cambiar estado de la coma
                }
            }
@@ -23,6 +25,7 @@ function numero(entrada) { //recoge el número pulsado en el argumento.
                if (entrada=="," && coma==0) { //si escribimos una coma decimal pòr primera vez
                    pantalla.innerHTML+=entrada;
                    x+=entrada;
+                   prev=x;
                    coma=1; //cambiar el estado de la coma  
                }
                //si intentamos escribir una segunda coma decimal no realiza ninguna acción.
@@ -31,6 +34,7 @@ function numero(entrada) { //recoge el número pulsado en el argumento.
                else {
                    pantalla.innerHTML+=entrada;
                    x+=entrada;
+                   prev=x;
                }
             }
             xi=0; //el número está iniciado y podemos ampliarlo.
@@ -39,22 +43,33 @@ function operate(s) {
          solve(); //si hay operaciones pendientes se realizan primero
          ni=x; //ponemos el 1º número en "numero en espera" para poder escribir el segundo.
          operation=s; //guardamos tipo de operación.
+         pantallaAcumulada.innerHTML=pantallaAcumulada.innerHTML+prev+s;
          xi=1; //inicializar pantalla.
          }  
 function solve() {
          if (operation=="no") { //no hay ninguna operación pendiente.
-            pantalla.innerHTML=x;   //mostramos el mismo número 
+            pantalla.innerHTML=x;   //mostramos el mismo número
             }
          else { //con operación pendiente resolvemos
             sl=ni+operation+x; // escribimos la operación en una cadena
             sol=eval(sl); //convertimos la cadena a código y resolvemos
             pantalla.innerHTML=sol; //mostramos la solución
+            prev=x;// segundo numero del acumulado
             x=sol; //guardamos la solución
             operation="no"; //ya no hayn operaciones pendientes
             xi=1; //se puede reiniciar la pantalla.
-            pantallaAcumulada.innerHTML=sl;
             }
         }
+function solveequal(){
+            sl=ni+operation+x; // escribimos la operación en una cadena
+            sol=eval(sl); //convertimos la cadena a código y resolvemos
+            pantalla.innerHTML=sol; //mostramos la solución
+            prev=x;// segundo numero del acumulado
+            pantallaAcumulada.innerHTML=pantallaAcumulada.innerHTML+x;
+            x=sol; //guardamos la solución
+            operation="no"; //ya no hayn operaciones pendientes
+            xi=1; //se puede reiniciar la pantalla.
+}
 function raizc() {
          x=Math.sqrt(x); //resolver raíz cuadrada.
          pantalla.innerHTML=x; //mostrar en pantalla resultado
